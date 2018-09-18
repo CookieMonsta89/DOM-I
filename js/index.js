@@ -45,6 +45,9 @@ let navMain = document.querySelector('nav');
 navMain.append(newLink);
 
 let links = document.querySelectorAll('a');
+links.forEach(link => {
+  link.style.color = 'red';
+})
 links[0].innerText = 'Services';
 links[1].innerText = 'Product';
 links[2].innerText = 'Vision';
@@ -57,14 +60,23 @@ links[6].style.cursor = 'pointer';
 
 
 let bigText = document.querySelector('.cta-text h1');
+bigText.style.color = 'red';
 bigText.innerText = 'DOM Is Awesome';
-console.log(bigText)
+
 
 let button = document.querySelector('.cta-text button');
 button.innerText = 'Get Started';
+button.style.border = '1px solid red';
+button.style.color = 'red';
 
 let bigImg = document.getElementById('cta-img');
 bigImg.src = './img/header-img.png'
+bigImg.addEventListener('mouseover', (e) => {
+  e.target.style.visibility = 'hidden';
+})
+bigImg.addEventListener('mouseout', (e) => {
+  e.target.style.visibility = 'visible';
+})
 
 let headTxt = document.querySelectorAll('h4');
 let pTxt = document.querySelectorAll('p');
@@ -92,3 +104,4 @@ pTxt[5].innerText = '123 Way 456 Street Somewhere, USA';
 pTxt[6].innerText = '1 (888) 888-8888';
 pTxt[7].innerText = 'sales@greatidea.io';
 pTxt[8].innerText = 'Copyright Great Idea! 2018';
+
